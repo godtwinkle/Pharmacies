@@ -3,26 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Quản lý hiệu thuốc</title>
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 	<link rel="stylesheet" href="Code CSS/css.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"crossorigin="anonymous">
-	
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-	crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-	integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-	crossorigin="anonymous"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-	integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-	crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-	<title>Quản lý hiệu thuốc</title>
 </head>
 <body>
 	<div class="container-fluid">
@@ -31,31 +20,28 @@
 		<div class="row">
 
 			<!-- PHAN LOGO -->
-			<div class="col-4 logo"><a href="main.html">
+			<div class="col-3 logo"><a href="main.html">
 				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8KKZlvFQfB6rUIW6SSv6ywvsErrvB2oT1Nw&usqp=CAU" alt="ảnh logo" width="100%" height="100%" rel="home"; title="nhà  thuốc uy tín nhất utc, số 1 miền bắc chất lượng sản phẩm cao "  > </a>
 			</div>
 
 			<!-- PHAN TIEU DE -->
-			<div class="col-8 baner">
-				<a style="font-size:30px; color:white;float: right;" href=""><i class="fas fa-shopping-cart"></i></a>
+			<div class="col-9 baner">
 				<!-- Đăng nhập -->
+				<a style="font-size:30px; color:white;float: right;" href=""><i class="fas fa-shopping-cart"></i></a>
 				<button onclick="document.getElementById('id01').style.display='block'" style="float: right;">Đăng nhập</button>
 
 				<div id="id01" class="modal">
 
-					<form class="modal-content animate">
+					<form class="modal-content animate" action="/action_page.php" method="post">
 
 						<div class="khung">
-							<label for="eml"><b>Email</b></label>
-							<input id="email" type="email" placeholder="Nhập email đăng ký" name="eml">
-
 							<label for="uname"><b>Tài khoản</b></label>
-							<input id="tk" type="text" placeholder="Nhập tài khoản" name="uname">
+							<input type="text" placeholder="Nhập tài khoản" name="uname" required>
 
 							<label for="psw"><b>Mật khẩu</b></label>
-							<input type="password" id="mk" placeholder=" Nhập mật khẩu" name="psw">
+							<input type="password" placeholder=" Nhập mật khẩu" name="psw" required>
 
-							<button type="submit" onclick="clicked()">Đăng nhập</button>
+							<button type="submit">Đăng nhập</button>
 							<label>
 								<input type="checkbox" checked="checked" name="remember">Nhớ mật khẩu
 							</label>
@@ -73,22 +59,26 @@
 
 				<div id="id02" class="modal">
 
-					<form class="modal-content animate">
+					<form class="modal-content animate" action="/action_page.php" method="post">
 
 						<div class="khung">
 							<label for="uname"><b>Tài khoản đăng ký</b></label>
-							<input id="tk" type="text" placeholder="Nhập tài khoản" name="uname" >
+							<input type="text" placeholder="Nhập tài khoản" name="uname" required>
 
 							<label for="psw"><b>Mật khẩu đăng ký</b></label>
-							<input type="password" id="mk" placeholder="Nhập mật khẩu" name="psw" >
+							<input type="password" placeholder="Nhập mật khẩu" name="psw" required>
 
-							<label for="psw"><b>Nhập lại mật khẩu</b></label>
-							<input type="password" id="mk" placeholder="Nhập lại mật khẩu" name="psw" >
+							<label for="repsw"><b>Nhập lại mật khẩu</b></label>
+							<input type="password" placeholder="Nhập lại mật khẩu" name="psw1" required>
 
 							<label for="eml"><b>Nhập email</b></label>
-							<input type="email" id="email" placeholder="Nhập email đăng ký" name="eml" >
+							<input type="email" placeholder="Nhập email đăng ký" name="eml" required>
 
-							<button type="submit" onclick="clicked()">Đăng ký</button>
+							<label for="mxn"><b>Mã xác nhận email</b></label>
+							<input type="text" placeholder="Nhập mã xác nhận" name="mxn" required>
+
+							<input type="submit" onclick="clicked();" value="Gửi lại" />
+							<button type="submit">Đăng ký</button>
 							<label>
 								<input type="checkbox" checked="checked" name="remember">Lưu tài khoản
 							</label>
@@ -102,22 +92,26 @@
 
 				<!-- Quên mật khẩu -->
 				<div id="id03" class="modal">
-					<form class="modal-content animate">
+					<form class="modal-content animate" action="/action_page.php" method="post">
 
 						<div class="khung">
 							<label for="uname"><b>Tài khoản</b></label>
-							<input id="tk" type="text" placeholder="Nhập tài khoản" name="uname" >
+							<input type="text" placeholder="Nhập tài khoản" name="uname" required>
 
 							<label for="psw"><b>Mật khẩu mới</b></label>
-							<input id="mk" type="password" placeholder="Nhập mật khẩu mới" name="psw" >
+							<input type="password" placeholder="Nhập mật khẩu mới" name="psw" required>
 
-							<label for="psw"><b>Nhập lại mật khẩu mới</b></label>
-							<input id="mk" type="password" placeholder="Nhập lại mật khẩu mới" name="psw" >
+							<label for="repsw"><b>Nhập lại mật khẩu mới</b></label>
+							<input type="password" placeholder="Nhập lại mật khẩu mới" name="psw1" required>
 
 							<label for="eml"><b>Email đã đăng kí</b></label>
-							<input id="email" type="email" placeholder="Nhập email đăng ký" name="eml">
+							<input type="email" placeholder="Nhập email đăng ký" name="eml" required>
 
-							<button type="submit" onclick="clicked()">Tiếp tục</button>
+							<label for="mxn"><b>Mã xác minh email</b></label>
+							<input type="text" placeholder="Nhập mã xác minh" name="mxn" required>
+
+							<input type="submit" onclick="clicked();" value="Gửi lại" />
+							<button type="submit">Tiếp tục</button>
 							<label>
 								<input type="checkbox" checked="checked" name="remember">Lưu tài khoản
 							</label>
@@ -147,86 +141,39 @@
 
 		<!-- PHAN THAN-->
 		<div class="row mt-3">
-
-			<!-- PHAN MUC LUC -->
-			<div class="menu">
-				<ul>
-					<li><a href="">Thực phẩm chức năng</a>
-						<ul class="menucon">
-							<li><a href="">Sinh lý nam và nữ</a></li>
-							<li><a href="">Nhóm hô hấp</a></li>
-							<li><a href="">Nhóm thần kinh</a></li>
-							<li><a href="">Nhóm tiêu hoá</a></li>
-							<li><a href="">Nhón cơ xương khớp</a></li>
-							<li><a href="">Nhóm mắt tai mũi</a></li>
-							<li><a href="">Nhóm tim mạch - huyết áp - tiểu đường</a></li>
-							<li><a href="">Đường ruột/Men vi sinh</a></li>
-							<li><a href="">Giảm cân</a></li>
-							<li><a href="">Chăm sóc tóc</a></li>
-							<li><a href="">Dành cho trẻ em</a></li>
-							<li><a href="">Đẹp da</a></li>
-							<li><a href="">Vitamin tổng hợp và khoáng chất</a></li>
-						</ul>
-					</li>
-					<li><a href="">Chăm sóc sức khoẻ</a>
-						<ul class="menucon">
-							<li><a href="khautrang.html">Khẩu trang</a></li>
-							<li><a href="">Thực phẩm dinh dưỡng</a></li>
-							<li><a href="">Dược mỹ phẩm</a></li>
-							<li><a href="">Kế hoạch gia đình</a></li>
-							<li><a href="">Chăm sóc Mắt/Tai/Mũi</a></li>
-							<li><a href="">Chăm sóc chân</a></li>
-							<li><a href="">Chống muỗi</a></li>
-							<li><a href="">Dụng cụ sơ cứu</a></li>
-							
-						</ul>
-					</li>
-					<li><a href="">Chăm sóc cá nhân</a>
-						<ul class="menucon">
-							<li><a href="">Chăm sóc em bé</a></li>
-							<li><a href="">Sản phẩm phòng tắm</a></li>
-							<li><a href="">Chăm sóc cơ thể</a></li>
-							<li><a href="">Sản phẩm khử mùi</a></li>
-							<li><a href="">Chăm sóc tóc</a></li>
-							<li><a href="">Vệ sinh phụ nữ</a></li>
-							<li><a href="">Chăm sóc nam giới</a></li>
-							<li><a href="">Sản phẩm tẩy lông</a></li>
-							
-						</ul>
-					</li>
-					<li><a href="">Chăm sóc sắc đẹp</a>
-						<ul class="menucon">
-							<li><a href="">Chăm sóc mặt</a></li>
-							<li><a href="">Sản phẩm chống nắng</a></li>
-							<li><a href="">Dụng cụ trang điểm</a></li>
-							<li><a href="">Mỹ phẩm</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-
-			<!-- PHAN GIUA -->
-			<div class="chinhgiua">
-
+			<div class="col-12 ">
 				<!-- PHAN HINH ANH -->
 				<div class="row">
 					<div class="col-12">
-						<img height="300px" width="100%" src="img/anhmain.jpg" alt="ảnh y tế">
+						<img width="100%" src="img/anhgioithieu.jpg" alt="ảnh y tế">
 					</div>
 				</div>
 
-				<h2 style="text-align: center; color:red;">Sản phẩm bán chạy</h2>
-				<!-- PHAN SAN PHAM -->
-				<div id="sp" class="row mt-2">
-
+				<!-- PHAN GIOI THIEU -->
+				<div class="row">
+					<div class="col-12">
+						<h2 style="text-align: center;">VỀ CHÚNG TÔI</h2>
+						<p>Được thành lập vào tháng 11/2020, đây là một trong những chuỗi nhà thuốc bán lẻ hiện đại đầu tiên tại thị trường Việt Nam, luôn luôn hướng đến mục tiêu nâng cao chất lượng chăm sóc sức khỏe cho từng khách hàng.</p>
+						<p>Hiện nay nhà thuốc đã có hệ thống nhà thuốc rải khắp các quận tại TP.HCM và nhiều tỉnh, thành phố lớn Hà Nội, Đà Nẵng, Cần Thơ, Thừa Thiên Huế, Bà Rịa – Vũng Tàu, Bình Dương, Long An, Đồng Nai, Tiền Giang… Chúng tôi hướng mục tiêu đến 2021 đạt được 1.000 cửa hàng bán lẻ thuốc và thực phẩm chức năng tại Việt Nam. Cùng với đó, trong tương lai nhà thuốc sẽ mở rộng hệ thống của mình trên khắp cả nước, luôn hướng đến mục tiêu trở thành nhà thuốc bán lẻ hiện đại, mang đến trải nghiệm tối ưu cho khách hàng.</p>
+						<p>Ở đây, mỗi dược sỹ không chỉ có năng lực chuyên môn cao, luôn tận tâm với nghề mà còn được đào tạo và huấn luyện để hoàn thành xuất sắc những sứ mệnh được giao, giúp nhà thuốc luôn xứng đáng với niềm tin của khách hàng, xứng đáng với niềm tự hào của Việt Nam.</p>
+						<p>Tại các cửa hàng trong hệ thống nhà thuốc, chúng tôi cung cấp đầy đủ những loại thuốc từ Tây y đến Đông y, bên cạnh đó, nhà thuốc còn có những sản phẩm để bạn chăm sóc sức khỏe và sắc đẹp cho những người thân yêu trong gia đình. Những nhóm sản phẩm chính chúng tôi cung cấp, bao gồm:</p>
+						<ul>
+							<li>Dược phẩm</li>
+							<li>Đông y</li>
+							<li>Thực phẩm chức năng</li>
+							<li>Sản phẩm chăm sóc sức khoẻ và làm đẹp</li>
+							<li>Thực phẩm bổ sung vitamin và khoáng chất</li>
+							<li>Sản phẩm bách hoá gia đình</li>
+						</ul>
+						<p>Đến với mọi cửa hàng của nhà thuốc, bạn đều được trải nghiệm và mua sắm những sản phẩm chất lượng cao, uy tín hàng đầu trên thị trường chăm sóc sức khỏe.</p>
+						<p>Mỗi một khách hàng đến nhà thuốc đều được hỗ trợ tận tình, tư vấn tận tâm như kim chỉ nam cho hoạt động kinh doanh của chúng tôi: “Tiết kiệm hơn – Sống khỏe hơn”.</p>
+					</div>
 				</div>
 			</div>
 		</div>
 
-		
-
 		<!-- PHAN DUOI -->
-		<div id="bottom" class="row mt-5 duoi">
+		<div class="row mt-5 duoi">
 			<div class="col-4">
 				<h3>VỀ NHÀ THUỐC</h3>
 				<p>Tại đây, mỗi dược sỹ luôn tận tâm phục vụ và được đào tạo để hoàn thành xuất sắc những sứ mệnh được giao...
@@ -264,7 +211,5 @@
 				</div>
 			</div>
 		</div>
-
-		<script language="javaScript" src="Jvs/js.js"></script>
-</body>
-</html>
+	</body>
+	</html>

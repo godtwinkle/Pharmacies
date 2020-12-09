@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Quản lý hiệu thuốc</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+	<link rel="stylesheet" href="Code CSS/css.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container-fluid">
+
+		<!-- PHAN DAU -->
+		<div class="row">
+
+			<!-- PHAN LOGO -->
+			<div class="col-3 logo"><a href="main.html">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8KKZlvFQfB6rUIW6SSv6ywvsErrvB2oT1Nw&usqp=CAU" alt="ảnh logo" width="100%" height="100%" rel="home"; title="nhà  thuốc uy tín nhất utc, số 1 miền bắc chất lượng sản phẩm cao "  > </a>
+			</div>
+
+			<!-- PHAN TIEU DE -->
+			<div class="col-9 baner">
+				<!-- Đăng nhập -->
+				<button onclick="document.getElementById('id01').style.display='block'" style="float: right;">Đăng nhập</button>
+
+				<div id="id01" class="modal">
+
+					<form class="modal-content animate" action="/action_page.php" method="post">
+
+						<div class="khung">
+							<label for="uname"><b>Tài khoản</b></label>
+							<input type="text" placeholder="Nhập tài khoản" name="uname" required>
+
+							<label for="psw"><b>Mật khẩu</b></label>
+							<input type="password" placeholder=" Nhập mật khẩu" name="psw" required>
+
+							<button type="submit">Đăng nhập</button>
+							<label>
+								<input type="checkbox" checked="checked" name="remember">Nhớ mật khẩu
+							</label>
+						</div>
+
+						<div class="khung" style="background-color:#f1f1f1">
+							<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Huỷ bỏ</button>
+							<button  type="button" onclick="document.getElementById('id03').style.display='block'" class="foget">Quên mật khẩu</button>
+						</div>
+					</form>
+				</div>
+
+				<!-- Đăng ký -->
+				<button onclick="document.getElementById('id02').style.display='block'" style="float: right;">Đăng ký</button>
+
+				<div id="id02" class="modal">
+
+					<form class="modal-content animate" action="/action_page.php" method="post">
+
+						<div class="khung">
+							<label for="uname"><b>Tài khoản đăng ký</b></label>
+							<input type="text" placeholder="Nhập tài khoản" name="uname" required>
+
+							<label for="psw"><b>Mật khẩu đăng ký</b></label>
+							<input type="password" placeholder="Nhập mật khẩu" name="psw" required>
+
+							<label for="repsw"><b>Nhập lại mật khẩu</b></label>
+							<input type="password" placeholder="Nhập lại mật khẩu" name="psw1" required>
+
+							<label for="eml"><b>Nhập email</b></label>
+							<input type="email" placeholder="Nhập email đăng ký" name="eml" required>
+
+							<label for="mxn"><b>Mã xác nhận email</b></label>
+							<input type="text" placeholder="Nhập mã xác nhận" name="mxn" required>
+
+							<input type="submit" onclick="clicked();" value="Gửi lại" />
+							<button type="submit">Đăng ký</button>
+							<label>
+								<input type="checkbox" checked="checked" name="remember">Lưu tài khoản
+							</label>
+						</div>
+
+						<div class="khung" style="background-color:#f1f1f1">
+							<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Huỷ bỏ</button>
+						</div>
+					</form>
+				</div>
+
+				<!-- Quên mật khẩu -->
+				<div id="id03" class="modal">
+					<form class="modal-content animate" action="/action_page.php" method="post">
+
+						<div class="khung">
+							<label for="uname"><b>Tài khoản</b></label>
+							<input type="text" placeholder="Nhập tài khoản" name="uname" required>
+
+							<label for="psw"><b>Mật khẩu mới</b></label>
+							<input type="password" placeholder="Nhập mật khẩu mới" name="psw" required>
+
+							<label for="repsw"><b>Nhập lại mật khẩu mới</b></label>
+							<input type="password" placeholder="Nhập lại mật khẩu mới" name="psw1" required>
+
+							<label for="eml"><b>Email đã đăng kí</b></label>
+							<input type="email" placeholder="Nhập email đăng ký" name="eml" required>
+
+							<label for="mxn"><b>Mã xác minh email</b></label>
+							<input type="text" placeholder="Nhập mã xác minh" name="mxn" required>
+
+							<input type="submit" onclick="clicked();" value="Gửi lại" />
+							<button type="submit">Tiếp tục</button>
+							<label>
+								<input type="checkbox" checked="checked" name="remember">Lưu tài khoản
+							</label>
+						</div>
+
+						<div class="khung" style="background-color:#f1f1f1">
+							<button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Huỷ bỏ</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- PHAN SEARCH -->
+		<div class="topnav">
+			<a href="main.html"><i class="fas fa-home">Trang chủ</i></a>
+			<a href="gioithieu.html">Giới thiệu</a>
+			<a href="#adv">Tin tức</a>
+			<a href="hoidap.html">Hỏi đáp</a>
+			<a href="">Nhân sự</a>
+			<div class="search-container">
+				<input type="text" placeholder="Tìm sản phẩm" name="search">
+				<button type="submit">Tìm kiếm</button>
+			</div>
+		</div>
+
+		<!-- PHAN THAN-->
+		<div class="row mt-3">
+			<div class="col-12">
+				
+				<p>
+					Suckhoedoisong.vn - Thông tin tại cuộc họp Ban Chỉ đạo Quốc gia phòng chống dịch COVID-19 chiều ngày 7/12, Bộ trưởng Bộ Y tế Nguyễn Thanh Long cho biết: Bộ Y tế phối hợp với các đơn vị "chạy đua với thời gian" trong nghiên cứu, thử nghiệm, sản xuất vắc xin COVID-19. Phó Thủ tướng Vũ Đức Đam, Trưởng Ban Chỉ đạo chủ trì cuộc họp.
+ 
+
+Không làm chặt chẽ, chuyện gì cũng có thể xảy ra...
+
+Nhận định về tình hình dịch trong nước, Bộ Y tế cho biết, hôm nay là ngày thứ 6 liên tiếp không ghi nhận ca mắc mới trong cộng đồng. Tất cả các trường hợp F1, F2 của các ca nhiễm tại TPHCM đã có kết quả âm tính với SAR-CoV-2.
+
+Tuy nhiên, trên các chuyến bay giải cứu và đón chuyên gia, lao động kỹ thuật cao từ nước ngoài vẫn ghi nhận những ca nhiễm mới. Tại các tỉnh biên giới vẫn phát hiện các trường hợp nhập cảnh bất hợp pháp không thực hiện cách ly, phòng chống COVID-19 theo quy định. Do đó, nguy cơ dịch COVID-19 xâm nhập luôn thường trực, trong khi thời điểm cuối năm, dịp Tết Dương lịch, Tết Nguyên đán, nhu cầu đi lại, về nước của người dân rất lớn.
+<br>
+<img src="https://media.suckhoedoisong.vn/Images/thaibinh/2020/12/07/DDN_6134.jpg"><br>
+<p>
+	Các bộ ngành, địa phương tiếp tục tăng cường kiểm tra, giám sát chặt chẽ việc thực hiện các quy định về nhập cảnh, giám sát, cách ly y tế, phòng chống COVID-19, đặc biệt là đảm bảo an toàn khi nhập cảnh, việc đưa đón từ cửa khẩu, các khu vực cách ly y tế đối với người nhập cảnh, tuyệt đối không để lây lan trong khu vực cách ly, lây lan ra cộng đồng.
+
+Đồng thời, chúng ta cần quản lý chặt chẽ xuất nhập cảnh qua biên giới, đặc biệt chú trọng quản lý các chuyên gia, người nước ngoài nhập cảnh vào Việt Nam làm việc, các đối tượng nhập cảnh trái phép.
+
+Qua vụ việc lây nhiễm từ khu cách ly ra cộng đồng ở TPHCM, các thành viên Ban Chỉ đạo, và các chuyên gia đã thảo luận, làm rõ nguyên nhân thời gian gần đây, nhiều tiếp viên hàng không mắc COVID-19; hoạt động của các cơ sở cách ly dân sự; trách nhiệm giám sát các khu cách ly dân sự, cách ly tại nhà, giám sát y tế người hết thời gian cách ly tập trung…
+
+Sau khi phân tích tình hình thực tế, các thành viên Ban Chỉ đạo cho rằng có tình trạng hành khách trên một số chuyến bay giải cứu không tuân thủ các quy định phòng chống dịch như không đeo khẩu trang khi ở trên máy bay, vì vậy, đề nghị có giám sát bằng camera để xử lý nghiêm những người vi phạm.
+
+Các địa phương, lực lượng phòng chống dịch triển khai các biện pháp quản lý chặt chẽ cửa khẩu, biên giới, người nhập cảnh, công tác cách ly, không được lơ là, mất cảnh giác; tổ chức các chuyến bay đưa công dân về nước đảm bảo an toàn;… đồng thời cần làm rõ trách nhiệm của từng tổ chức, cá nhân; rà soát lại toàn bộ các quy định, quy trình, có chế tài mạnh, xử lý nghiêm tất cả các trường hợp vi phạm quy định về phòng chống dịch COVID-19 để bảo đảm răn đe.
+
+Bộ trưởng Bộ Y tế Nguyễn Thanh Long bày tỏ lo ngại: Không làm chặt chẽ, chuyện gì cũng có thể xảy ra. Tất cả các bộ, ngành phải tăng cường kiểm tra, giám sát trong lĩnh vực quản lý của mình. Đây là thời kỳ cao điểm.
+
+ 
+
+Liên quan đến vấn đề nghiên cứu, sản xuất vắc xin phòng chống COVID-19, Bộ trưởng Nguyễn Thanh Long cho biết: Bộ Y tế phối hợp với các đơn vị "chạy đua với thời gian" trong nghiên cứu, thử nghiệm, sản xuất vắc xin COVID-19.
+
+Hiện Việt Nam có 4 đơn vị tham gia nghiên cứu, sản xuất vắc xin COVID-19, gồm: Công ty trách nhiệm hữu hạn một thành viên Vắc xin và Sinh phẩm số 1 (VABIOTECH); Trung tâm Nghiên cứu Sản xuất Vắc xin và Sinh phẩm Y tế (POLYVAC); Viện V ắc xin và Sinh phẩm y tế (IVAC) và Công ty trách nhiệm hữu hạn Dược Nanogen (NANOGEN).
+
+Trong đó, 3 đơn vị (IVAC, VABIOTECH, NANOGEN) đã hoàn thiện quy trình sản xuất quy mô phòng thí nghiệm và hiện đang đánh giá tính an toàn, tính miễn dịch của vắc xin trên động vật. Công ty NANOGEN đã sản xuất 5.000 liều vắc xin COVID-19 để thử nghiệm. Dự kiến, ngày 10/12, NANOGEN phối hợp với Học viện Quân y sẽ chính thức tuyển tình nguyện viên tham gia vào giai đoạn 1 thử nghiệm vắc xin COVID-19 của Việt Nam.
+
+"Bộ Y tế sẽ tiếp tục phối hợp chặt chẽ với các đơn vị để đẩy nhanh tiến trình nghiên cứu, thử nghiệm đảm bảo đúng yêu cầu đề ra về tiến độ, chất lượng, an toàn… Song song với hướng đẩy mạnh nghiên cứu, sản xuất trong nước, Bộ Y tế cũng đang triển khai đàm phán với các đối tác nước ngoài. Nếu thuận lợi, phải đến quý II/2022, Việt Nam mới có thể cung ứng rộng rãi vắc xin COVID-19; do đó, vẫn phải triển khai quyết liệt, thực hiện nghiêm tất cả các biện pháp phòng, chống dịch; không thể trông cậy quá nhiều vào vắc xin COVID-19”- Bộ trưởng Bộ Y tế nói.
+
+Tại cuộc họp, các thành viên Ban Chỉ đạo thống nhất đề nghị các bộ ngành liên quan, ủng hộ, tháo gỡ các vướng mắc về thủ tục để tạo điều kiện tốt nhất để đẩy nhanh tiến độ nghiên cứu, sản xuất vắc xin trong nước.
+ 
+
+Tiếp tục siết chặt các quy định phòng chống dịch trên các chuyến bay
+
+Kết luận cuộc họp, Phó Thủ tướng Vũ Đức Đam cho rằng dù cần tiếp tục theo dõi nhưng có thể nói đến nay tình huống lây nhiễm COVID-19 ở TPHCM cơ bản được kiểm soát.
+
+Phó Thủ tướng ghi nhận, biểu dương nỗ lực của TPHCM, Bộ Y tế, các lực lượng chức năng đã vào cuộc rất nhanh, sau 48 tiếng kể từ khi phát hiện ca nhiễm, đã xác định được toàn bộ các ca F1, F2, chủ động lấy mẫu, khoanh vùng, cách ly. Đây là tiến bộ lớn về khả năng dập dịch của chúng ta. Tuy nhiên, từ vụ việc lây nhiễm ở TPHCM, chúng ta cần xem xét, phân tích kỹ nguyên nhân do đâu để có giải pháp thật thiết thực, hiệu quả, tránh trường hợp tương tự xảy ra.
+
+Trước diễn biến phức tạp của dịch bệnh COVID-19 trên thế giới, cả số ca nhiễm mới và tử vong đều tăng cao, trong khi khả năng tiếp cận văc xin chưa thể nhanh được, vì vậy, chúng ta phải tiếp tục siết chặt các biện pháp phòng ngừa. Đặc biệt là mùa đông đã đến, đất nước sắp diễn ra nhiều sự kiện chính trị-xã hội lớn, dịp Tết Dương lịch, Tết Nguyên đán…
+
+“Chúng ta đã xác định các nguy cơ nguồn bệnh chủ yếu là từ người nhập cảnh (hợp pháp, trái phép), cộng đồng, thực phẩm nhập khẩu từ nước có dịch. Để thực hiện mục tiêu kép, chúng ta vừa chống dịch, vừa phải đón chuyên gia, lao động, kỹ thuật và phục vụ các dự án phát triển kinh tế-xã hội, đón bà con người Việt ở các vùng dịch, vì vậy, nguồn bệnh từ người nhập cảnh hợp pháp là nguy hiểm nhất…”- Phó Thủ tướng nêu rõ.
+
+Tất cả các biện pháp phòng chống dịch đã hết sức đầy đủ, được tập huấn trực tiếp, quán triệt tỉ mỉ đến tận các cấp chính quyền địa phương. Vì vậy, chính quyền địa phương các cấp phải phát huy chủ động, trách nhiệm của với sự tham mưu của ngành y tế, phối hợp chặt chẽ của ngành công an.
+
+Qua vụ việc lây nhiễm ở TPHCM, Phó Thủ tướng yêu cầu tiếp tục siết chặt các quy định phòng chống dịch trên các chuyến bay đón chuyên gia, công dân Việt Nam về nước.
+
+“Trên chuyến bay giải cứu, chúng ta không biết chắc có người nhiễm COVID-19 hay không, nên các biện pháp phòng chống dịch phải thực hiện như trong bệnh viện. Mọi vi phạm phải xử lý nghiêm”- Phó Thủ tướng nói
+
+Các thành viên Ban Chỉ đạo, chuyên gia cũng nhấn mạnh yêu cầu thực hiện nghiêm quy định cách ly tập trung 14 ngày đối với người nhập cảnh. Các cơ sở cách ly dân sự phải được chính quyền  địa phương quyết định chấp thuận trên cơ sở tham mưu của ngành y tế.
+
+Về cách ly tại nhà riêng, các quy định của Ban Chỉ đạo chỉ cho phép thực hiện những nơi đảm bảo đủ điều kiện y tế, và về cơ bản không được cách ly ở khu chung cư.
+
+Những cơ sở cách ly dân sự, cách ly tại nhà riêng phải có biển báo, thông báo cho người dân sinh sống lân cận.
+
+Thông tin tại cuộc họp, Thứ trưởng Bộ Y tế Nguyễn Trường Sơn cho biết thêm trong lần kiểm tra đầu tiên, Khu cách ly đoàn tiếp viên của Hãng hàng không quốc gia Việt Nam tại TPHCM thực hiện tốt các quy trình cách ly nhưng sau đó đã có sự lơi lỏng. Qua đó cho thấy sự cần thiết phải kiểm tra định kỳ các cơ sở cách ly tập trung, nhất là cơ sở cách ly dân sự, ràng buộc trách nhiệm cụ thể của chủ cơ sở cách ly, chính quyền, công an, y tế địa phương.
+</p>
+<br><img src="https://media.suckhoedoisong.vn/Images/thaibinh/2020/12/07/DDN_6051.jpg">
+<br>
+<p><strong>Tăng cường kiểm tra, giám sát</strong><br>
+
+Qua kiểm tra, làm việc tại các địa phương, một số thành viên Ban Chỉ đạo nêu thực tế công tác phòng chống dịch tại cấp tỉnh được nhận thức, quán triệt đầy đủ nhưng xuống bên dưới, trong thời gian dài không có dịch thì càng có tâm lý chủ quan. Một số nơi có biểu hiện lơi lỏng trong giám sát y tế đối với người hết thời gian cách ly tập trung. Đây là nguy cơ lây nhiễm ra cộng đồng, phải kiên quyết ngăn chặn.
+
+Chúng ta đã có quy định rất rõ sau 14 ngày cách ly tập trung, người nhập cảnh còn 14 ngày giám sát y tế trên địa bàn. Chính quyền cơ sở, công an, y tế phải nắm được từng ngày trên địa bàn có bao nhiêu người thuộc diện giám sát y tế sau cách ly, thăm hỏi nắm tình hình, sức khỏe của những người này ít nhất 1 ngày 1 lần, đảm bảo những người này không vi phạm.
+
+Quy định đã có, tập huấn đã có, quán triệt ban chỉ đạo các cấp đã có, chúng ta phải siết chặt, thực hiện thật nghiêm. Nơi nào thực hiện không nghiêm thì chính quyền cơ sở, công an, y tế phải chịu trách nhiệm trực tiếp
+
+Vụ việc lây nhiễm ở TPHCM hoàn toàn có thể xảy ra ở nơi khác nếu chúng ta lơ là. Chỉ một ca nhiễm có thể khiến hàng trăm nghìn học sinh, sinh viên phải nghỉ học, hàng nghìn doanh nghiệp bị thiệt hại kinh tế.
+
+Ban Chỉ đạo yêu cầu rà soát việc tuân thủ các quy định liên quan đến cách ly của chính quyền các cấp. Trưởng Ban Chỉ đạo các tỉnh có kế hoạch đôn đốc, tăng cường kiểm tra trên địa bàn. Bộ Y tế, Bộ Công an, Bộ VHTTDL, Bộ Công Thương… tổ chức đoàn kiểm tra và có văn bản đôn đốc các sở ngành trong hệ thống quản lý ở địa phương.
+
+Đảm bảo thực hiện thật tốt các quy định hiện nay trong khu cách ly, giám sát y tế tại cộng đồng, phòng chống dịch trong các cơ sở y tế, giáo dục, cơ sở lưu trú, các cơ sở liên quan đến du lịch, cơ sở sản xuất…
+
+</p>
+				</p>
+				</div>
+
+
+		
+		</div>
+
+
+		<!-- PHAN DUOI -->
+		<div class="row mt-5 duoi">
+			<div class="col-4">
+				<h3>VỀ NHÀ THUỐC</h3>
+				<p>Tại đây, mỗi dược sỹ luôn tận tâm phục vụ và được đào tạo để hoàn thành xuất sắc những sứ mệnh được giao</p>
+				<h3>Kết nối với chúng tôi</h3>
+				<hr>
+				<div class="icon">
+					<a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+					<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+				</div>
+			</div>
+
+			<div class="col-4">
+				<h3>ĐỊA CHỈ NHÀ THUỐC</h3>
+				<p>Số xx, phường X, quận X, Thành phố X</p>
+				<h3>HOTLINE MIỄN PHÍ (7H-22H)</h3>
+				<ul>
+					<li>Gọi đặt hàng: 1800xxxx</li>
+					<li>Gọi tư vấn - hỗ trợ: 1800xxxx</li>
+				</ul>
+				<p>Thông tin, hình ảnh của sản phẩm trong website chỉ mang tính chất tham khảo. Sản phẩm thực tế có thể thay đổi/chênh lệch theo từng Lô sản xuất.</p>
+			</div>
+
+			<div class="col-4">
+				<h3>LIÊN KẾT HỮU ÍCH</h3>
+				<ul>
+					<li><a href="hoidap.html">Câu hỏi thường gặp</a></li>
+					<li><a href="">Cửa hàng gần bạn</a></li>
+					<li><a href="">Chính sách giao hàng</a></li>
+					<li><a href="">Chính sách đổi trả</a></li>
+					<li><a href="">Chương trình Extracare</a></li>
+					<li><a href="">Thông báo cổ đông</a></li>
+					<li><a href="">Liên hệ hợp tác</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	
+</body>
+</html>

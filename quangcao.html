@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Quản lý hiệu thuốc</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+	<link rel="stylesheet" href="Code CSS/css.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="container-fluid">
+
+		<!-- PHAN DAU -->
+		<div class="row">
+
+			<!-- PHAN LOGO -->
+			<div class="col-3 logo"><a href="main.html">
+				<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8KKZlvFQfB6rUIW6SSv6ywvsErrvB2oT1Nw&usqp=CAU" alt="ảnh logo" width="100%" height="100%" rel="home"; title="nhà  thuốc uy tín nhất utc, số 1 miền bắc chất lượng sản phẩm cao "  > </a>
+			</div>
+
+			<!-- PHAN TIEU DE -->
+			<div class="col-9 baner">
+				<!-- Đăng nhập -->
+				<button onclick="document.getElementById('id01').style.display='block'" style="float: right;">Đăng nhập</button>
+
+				<div id="id01" class="modal">
+
+					<form class="modal-content animate" action="/action_page.php" method="post">
+
+						<div class="khung">
+							<label for="uname"><b>Tài khoản</b></label>
+							<input type="text" placeholder="Nhập tài khoản" name="uname" required>
+
+							<label for="psw"><b>Mật khẩu</b></label>
+							<input type="password" placeholder=" Nhập mật khẩu" name="psw" required>
+
+							<button type="submit">Đăng nhập</button>
+							<label>
+								<input type="checkbox" checked="checked" name="remember">Nhớ mật khẩu
+							</label>
+						</div>
+
+						<div class="khung" style="background-color:#f1f1f1">
+							<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Huỷ bỏ</button>
+							<button  type="button" onclick="document.getElementById('id03').style.display='block'" class="foget">Quên mật khẩu</button>
+						</div>
+					</form>
+				</div>
+
+				<!-- Đăng ký -->
+				<button onclick="document.getElementById('id02').style.display='block'" style="float: right;">Đăng ký</button>
+
+				<div id="id02" class="modal">
+
+					<form class="modal-content animate" action="/action_page.php" method="post">
+
+						<div class="khung">
+							<label for="uname"><b>Tài khoản đăng ký</b></label>
+							<input type="text" placeholder="Nhập tài khoản" name="uname" required>
+
+							<label for="psw"><b>Mật khẩu đăng ký</b></label>
+							<input type="password" placeholder="Nhập mật khẩu" name="psw" required>
+
+							<label for="repsw"><b>Nhập lại mật khẩu</b></label>
+							<input type="password" placeholder="Nhập lại mật khẩu" name="psw1" required>
+
+							<label for="eml"><b>Nhập email</b></label>
+							<input type="email" placeholder="Nhập email đăng ký" name="eml" required>
+
+							<label for="mxn"><b>Mã xác nhận email</b></label>
+							<input type="text" placeholder="Nhập mã xác nhận" name="mxn" required>
+
+							<input type="submit" onclick="clicked();" value="Gửi lại" />
+							<button type="submit">Đăng ký</button>
+							<label>
+								<input type="checkbox" checked="checked" name="remember">Lưu tài khoản
+							</label>
+						</div>
+
+						<div class="khung" style="background-color:#f1f1f1">
+							<button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Huỷ bỏ</button>
+						</div>
+					</form>
+				</div>
+
+				<!-- Quên mật khẩu -->
+				<div id="id03" class="modal">
+					<form class="modal-content animate" action="/action_page.php" method="post">
+
+						<div class="khung">
+							<label for="uname"><b>Tài khoản</b></label>
+							<input type="text" placeholder="Nhập tài khoản" name="uname" required>
+
+							<label for="psw"><b>Mật khẩu mới</b></label>
+							<input type="password" placeholder="Nhập mật khẩu mới" name="psw" required>
+
+							<label for="repsw"><b>Nhập lại mật khẩu mới</b></label>
+							<input type="password" placeholder="Nhập lại mật khẩu mới" name="psw1" required>
+
+							<label for="eml"><b>Email đã đăng kí</b></label>
+							<input type="email" placeholder="Nhập email đăng ký" name="eml" required>
+
+							<label for="mxn"><b>Mã xác minh email</b></label>
+							<input type="text" placeholder="Nhập mã xác minh" name="mxn" required>
+
+							<input type="submit" onclick="clicked();" value="Gửi lại" />
+							<button type="submit">Tiếp tục</button>
+							<label>
+								<input type="checkbox" checked="checked" name="remember">Lưu tài khoản
+							</label>
+						</div>
+
+						<div class="khung" style="background-color:#f1f1f1">
+							<button type="button" onclick="document.getElementById('id03').style.display='none'" class="cancelbtn">Huỷ bỏ</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<!-- PHAN SEARCH -->
+		<div class="topnav">
+			<a href="main.html"><i class="fas fa-home">Trang chủ</i></a>
+			<a href="gioithieu.html">Giới thiệu</a>
+			<a href="#adv">Tin tức</a>
+			<a href="hoidap.html">Hỏi đáp</a>
+			<a href="nhansu.html">Nhân sự</a>
+			<div class="search-container">
+				<input type="text" placeholder="Tìm sản phẩm" name="search">
+				<button type="submit">Tìm kiếm</button>
+			</div>
+		</div>
+
+
+		<!-- PHAN THAN-->
+		<div class="row mt-3">
+			
+
+				<!-- PHAN CÂU HỎI -->
+				<div class="row">
+					<div class="col-12">
+						<p>
+							<strog>1. Những nguyên nhân gây nên chứng đầy bụng, khó tiêu</strog><br>
+Chắc hẳn bất kỳ ai đều từng một lần cảm nhận được phần bụng quá no sau khi ăn cảm giác rất khó tiêu và khó chịu. Vậy những nguyên nhân nào dẫn đến tình trạng này?
+
+
+Thói quen ăn uống: Đây là một trong những nguyên nhân phổ biến gây ra tình trạng đầy bụng khó tiêu. Điển hình như ăn quá nhanh, ăn không đúng bữa, nhai không kỹ hoặc ăn quá nhiều thực phẩm khó tiêu hóa,... gây ra sự chuyển động bất thường của dạ dày khi tiêu hóa thức ăn.
+      <br>
+      <img src="https://thegioiduocvinhgia.vn/userupload/2020/1/suc-khoe-az/kho-tieu/an-qua-nhieu-thuc-pham-la-mot-trong-nhung-nguyen-nhan-dan-den-chung-day-bung-kho-tieu.jpg"><br>
+      Mắc bệnh về đường tiêu hoá: Các bệnh về đường tiêu hóa như: trào ngược dạ dày, viêm loét dạ dày, ung thư dạ dày dẫn,... làm giảm khả năng tiêu hóa. Từ đó, thức ăn đi vào dạ dày không được tiêu hóa kỹ gây dư thừa trong dạ dày gây ra tình trạng đầy bụng, khó tiêu, ợ hơi.
+>> Tìm hiểu thêm: [Góc cảnh báo] Đừng coi thường khi thấy biểu hiện đầy bụng ợ hơi khó tiêu
+
+Ngoài ra do một số nguyên nhân khác nữa như: thiếu men tiêu hóa, men vi sinh, ảnh hưởng tâm lý, stress,...,<br>
+<strong>2. 12 cách chữa đầy bụng khó tiêu tại nhà hiệu quả</strong>
+Một số cách chữa đầy bụng khó tiêu sau đây sẽ giúp bạn không còn lo lắng khi cảm thấy bụng của mình “lên cơn” khó chịu:<br>
+
+<strong>2.1. Chữa đầy bụng khó tiêu bằng gừng</strong>
+Gừng là một trong những loại gia vị phổ biến trong mỗi gia đình và cũng là một vị thuốc dân gian hữu hiệu trị khỏi nhiều loại bệnh. Trong gừng mang vị cay, tính ấm vào 3 kinh phế, tỳ, vị, có tác dụng phát biểu, tác hàn ôn trung, tiêu đàm, hành thủy, giải độc giúp kích thích hệ tiêu hóa và làm giảm chứng đầy bụng, chướng bụng và khó tiêu.
+<br>
+<img src="https://thegioiduocvinhgia.vn/userupload/2020/1/suc-khoe-az/kho-tieu/gung-giup-kich-thich-he-tieu-hoa-chua-day-bung-kho-tieu.jpg">
+<br><p>Có rất nhiều cách giảm đầy bụng khó tiêu bằng gừng tại nhà như:
+
+<h4>Cách 1: Sử dụng hỗn hợp trà gừng, mật ong, trà xanh</h4>
+
+Nguyên liệu:
+
+Cách làm này vô cùng đơn giản bạn chỉ cần chuẩn bị đầy đủ các nguyên liệu cần có khoảng 3-4 lá trà xanh, 1 thìa mật ong, 1 củ gừng tươi. 
+
+Cách thực hiện:
+
+<h6>Bước 1: Bạn đem gừng đi rửa thật sạch, gọt vỏ và thái từng lát mỏng. <br>
+Bước 2: Lấy gừng và lá trà xanh nấu trong 200ml nước. Sau đó vớt bỏ lá trà khi sôi.<br>
+Bước 3: Rót nước ra một chiếc cốc và thêm mật ong vào để uống<br>
+Bước 4: Uống từ từ từng ngụm một sẽ cảm nhận được tình trạng đầy bụng khó tiêu giảm dần.<br>
+Cách 2: Uống nước gừng ấm</h6><br>
+
+Chuẩn bị nguyên liệu: Bạn nên sử dụng 1 củ gừng tươi, thêm một chút muối tinh<br>
+
+Cách thực hiện:<br>
+
+Bước 1: Đem củ gừng tươi rửa thật sạch sau đó gọt bỏ vỏ và thái mỏng.<br>
+Bước 2: Dùng 100ml nước sôi và hãm gừng khoảng 5 phút<br>
+Bước 3: Sau khi nước nguội bớt, còn ấm thì uống từng ngụm nhỏ<br>
+Bước 4: Bạn có thể rửa sạch gừng thái nhỏ, thêm một chút muối tinh, rồi nhai và nuốt.<br>
+2.2. Chữa đầy bụng khó tiêu bằng tỏi<br>
+Tỏi được nhiều người xem là một trong những loại kháng sinh tự nhiên mang khả năng kích thích tiêu hóa và hỗ trợ làm giảm chứng đầy bụng khó tiêu hiệu quả. Trong tỏi đã được nghiên cứu bao gồm các thành phần tốt như kháng sinh allicin, glucogen, Aliin, Fitonxit… Các thành phần này giúp sát khuẩn, cải thiện các tình trạng liên quan đến đường tiêu hóa, loại bỏ chứng ợ hơi, ợ nóng, khó tiêu, đầy bụng. Chính vì vậy, tỏi được nhiều người áp dụng trong việc giúp loại bỏ cảm giác đầy bụng, chướng bụng, ăn không tiêu.</p>
+
+						</p>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<!-- PHAN DUOI -->
+		<div class="row mt-5 duoi">
+			<div class="col-4">
+				<h3>VỀ NHÀ THUỐC</h3>
+				<p>Tại đây, mỗi dược sỹ luôn tận tâm phục vụ và được đào tạo để hoàn thành xuất sắc những sứ mệnh được giao</p>
+				<h3>Kết nối với chúng tôi</h3>
+				<hr>
+				<div class="icon">
+					<a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
+					<a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook"></i></a>
+				</div>
+			</div>
+
+			<div class="col-4">
+				<h3>ĐỊA CHỈ NHÀ THUỐC</h3>
+				<p>Số xx, phường X, quận X, Thành phố X</p>
+				<h3>HOTLINE MIỄN PHÍ (7H-22H)</h3>
+				<ul>
+					<li>Gọi đặt hàng: 1800xxxx</li>
+					<li>Gọi tư vấn - hỗ trợ: 1800xxxx</li>
+				</ul>
+				<p>Thông tin, hình ảnh của sản phẩm trong website chỉ mang tính chất tham khảo. Sản phẩm thực tế có thể thay đổi/chênh lệch theo từng Lô sản xuất.</p>
+			</div>
+
+			<div class="col-4">
+				<h3>LIÊN KẾT HỮU ÍCH</h3>
+				<ul>
+					<li><a href="hoidap.html">Câu hỏi thường gặp</a></li>
+					<li><a href="">Cửa hàng gần bạn</a></li>
+					<li><a href="">Chính sách giao hàng</a></li>
+					<li><a href="">Chính sách đổi trả</a></li>
+					<li><a href="">Chương trình Extracare</a></li>
+					<li><a href="">Thông báo cổ đông</a></li>
+					<li><a href="">Liên hệ hợp tác</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	
+</body>
+</html>

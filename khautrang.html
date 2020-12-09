@@ -37,7 +37,6 @@
 
 			<!-- PHAN TIEU DE -->
 			<div class="col-8 baner">
-				<a style="font-size:30px; color:white;float: right;" href=""><i class="fas fa-shopping-cart"></i></a>
 				<!-- Đăng nhập -->
 				<button onclick="document.getElementById('id01').style.display='block'" style="float: right;">Đăng nhập</button>
 
@@ -215,15 +214,12 @@
 					</div>
 				</div>
 
-				<h2 style="text-align: center; color:red;">Sản phẩm bán chạy</h2>
 				<!-- PHAN SAN PHAM -->
-				<div id="sp" class="row mt-2">
+				<div id="khautrang" class="row mt-2">
 
 				</div>
 			</div>
 		</div>
-
-		
 
 		<!-- PHAN DUOI -->
 		<div id="bottom" class="row mt-5 duoi">
@@ -265,6 +261,51 @@
 			</div>
 		</div>
 
-		<script language="javaScript" src="Jvs/js.js"></script>
+		<script>
+			class Product1{
+constructor(name,price,img,link) {
+	this.name=name;
+	this.price=price;
+	this.img=img;
+	this.link=link;
+}
+}
+
+let p1= new Product1("Khẩu trang vải 2 lớp kháng khuẩn Trung Quy (10 cái/gói)","Giá: 59,000VND/Gói","https://image.pharmacity.vn/live/uploads/2020/07/P17035_3-1.jpg");
+
+let p2= new Product1("Khẩu trang vải 4lớp kháng khuẩn Bạch Mai (50cái/hộp)","Giá: 100,000VND/Hộp","https://healthvietnam.vn/photos/shares/Sanphamkhac/phoi-canh-1-hop-khau-trang-4-lop.jpg");
+let p3= new Product1("Khẩu trang vải 4 lớp kháng khuẩn(50cái/hộp)","Giá: 80,000VND/Hộp","https://healthvietnam.vn/photos/177/khau-trang-3-lop.PNG");
+let p4= new Product1("Khẩu trang vải kháng khuẩn Fresh Air Rando (1 chiếc)","Giá: 20,000VND/Chiếc","https://s.meta.com.vn/Data/image/2020/03/17/khau-trang-vai-khang-khuan-fresh-air-rando-1.jpg");
+let p5= new Product1("Khẩu trang Cambridge Masks  (1 chiếc)","Giá: 35,000VND/Chiếc","https://cdn.tgdd.vn/Files/2020/03/10/1241182/top-10-thuong-hieu-khau-trang-tot-nhat-hien-nay-1.jpg");
+let p6= new Product1("Khẩu trang công nghệ chạy bằng pin (1 chiếc)","Giá: 55,000VND/Chiếc","https://img.nhandan.com.vn/Files/Images/2020/08/28/a1-1598601271335.jpg");
+let p7= new Product1("Khẩu trang chống bụi mịn PM2.5, NeoMask NC95 (1 chiếc)","Giá: 20,000VND/Chiếc","https://vinatex.com.vn/wp-content/uploads/2020/04/1B583FBD-1446-4227-B2C4-ABDA32A2DC1E-e1586663137946.jpeg");
+let p8= new Product1("Khẩu trang Airphin (1 chiếc)","Giá: 95,000VND/Chiếc","https://cdn.tgdd.vn/Files/2020/03/10/1241182/top-10-thuong-hieu-khau-trang-tot-nhat-hien-nay-7.jpg");
+let p9= new Product1("Khẩu trang cao cấp VOGMASK (1 chiếc)","Giá: 75,000VND/Chiếc","https://cdn.tgdd.vn/Files/2020/03/10/1241182/top-10-thuong-hieu-khau-trang-tot-nhat-hien-nay.jpg");
+let p10= new Product1("Khẩu trang 3M (1 chiếc)","Giá: 50,000VND/Chiếc","https://cdn.tgdd.vn/Files/2020/03/10/1241182/top-10-thuong-hieu-khau-trang-tot-nhat-hien-nay-2.jpg");
+let p11= new Product1("Khẩu trang Xiaomi thương hiệu Purely (1 chiếc)","Giá: 80,000VND/Chiếc","https://mistore.com.vn/wp-content/uploads/2017/03/purely6.jpg");
+let p12= new Product1("Khẩu trang Honeywell H901 (1 chiếc)","Giá: 45,000VND/Chiếc","https://cdn.tgdd.vn/Files/2020/03/10/1241182/top-10-thuong-hieu-khau-trang-tot-nhat-hien-nay-8.jpg");
+let p13= new Product1("Khẩu trang SPEKYAL(50 chiếc/Hộp","Giá: 60,000VND/Hộp","https://cdn.thegioididong.com/Products/Images/5872/219213/khau-trang-3-lop-winer-special-2-700x467.jpg");
+let p14= new Product1("Khẩu trang NIVA(20 Chiếc/HỘp","Giá: 40,000VND/Hộp","https://cdn.tgdd.vn/Products/Images/5872/222731/bhx/khau-trang-y-te-niva-3-lop-hop-20-cai-202005181002408284.jpg");
+let p15= new Product1("Khẩu trang ADIDAS","Giá: 70,000VND/Chiếc","https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/0a76afaa91be462b800aabb2011f8888_9366/Bo_3_khau_trang_M-L_DJen_H08837_21_model.jpg");
+let p16= new Product1("Khẩu trang vải kháng khuẩn ShiBi","Giá: 15,000VND/Chiếc","https://khautrangn99.com/wp-content/uploads/2020/03/P1020765.jpg");
+
+let arrPro = [p1,p2,p3,p4,p5,p6,p7,p8,p9,p10,p11,p12,p13,p14,p15,p16];
+
+
+let str ='';
+for(let i=0;i<arrPro.length;i++){
+str += "<div class='col-4 col-lg-3'><div style='overflow: auto; margin-bottom:10px;' class=\"card\">\n" +
+		"  <img style='height: 200px' src=\""+arrPro[i].img+"\" class=\"card-img-top\" alt=\"Thuốc\">\n" +
+		"  <div class=\"card-body\">\n" +
+		"    <h5 class=\"card-title\">"+arrPro[i].name+"</h5>\n" +
+		"<hr>\n"+
+		"    <h5 class=\"card-title\">"+arrPro[i].price+"</h5>\n" +
+		"    <a href=\""+arrPro[i].link+"\" class=\"btn btn-primary\">Xem</a>\n" +
+		"  </div>\n" +
+		"</div></div>";
+
+}
+document.getElementById("khautrang").innerHTML = str;
+		</script>
 </body>
 </html>
